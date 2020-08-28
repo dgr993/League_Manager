@@ -3,6 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "dependencies": {
+    "config.json": "^0.0.4",
+    "dotenv": "^8.2.0",
+    "env": "^0.0.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,23 +29,5 @@
   "bugs": {
     "url": "https://github.com/dgr993/League_Manager/issues"
   },
-  "homepage": "https://github.com/dgr993/League_Manager#readme",
-  "dependencies": {
-    "config.json": "0.0.4",
-    "dotenv": "^8.2.0",
-    "env": "0.0.2",
-    "express": "^4.17.1",
-    "mysql": "^2.18.1",
-    "orm": "^5.0.5",
-    "sequelize": "^6.3.4",
-    "mysql2": "^2.1.0",
-
-  "name": "models",
-    "version": "1.0.0",
-    "description": "",
-    "main": "league_manager.js",
-    "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    }
-  }
+  "homepage": "https://github.com/dgr993/League_Manager#readme"
 }
