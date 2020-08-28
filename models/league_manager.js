@@ -15,26 +15,53 @@ var league_manager_db = sequelize.define("team", {
   teamName: Sequelize.STRING,
   teamWins: Sequelize.INTEGER,
   teamLosses: Sequelize.INTEGER,
-  teamCoach: Sequelize.STRING
-  //foreign key of league
+  teamCoach: Sequelize.STRING,
+  leagueId: {
+    type: Sequelize.INTEGER,
+    references: {
+       model: 'league', // 'persons' refers to table name
+       key: 'id' // 'id
+    }},
+    coachId: {
+      type: Sequelize.INTEGER,
+      references: {
+         model: 'coach', // 'persons' refers to table name
+         key: 'id' // 'id
+      }}
+
+});
+
+var league_manager_db = sequelize.define("coach", {
+  coachName: Sequelize.STRING,
+  coachTeam: Sequelize.STRING
 });
 
 var league_manager_db = sequelize.define("player", {
   playerName: Sequelize.STRING,
   playerAge: Sequelize.INTEGER,
-  //foreign key of coach
+  coachId: {
+    type: Sequelize.INTEGER,
+    references: {
+       model: 'coach', // 'persons' refers to table name
+       key: 'id' // 'id
+    }}
   //customizable titles, parent name, stats(rbi, )
   //foreign key of current team
 });
 
 var league_manager_db = sequelize.define("game_history", {
   teamScore: Sequelize.STRING,
-  //foreign key each team
   teamOne: Sequelize.STRING,
   teamOneScore: Sequelize.STRING,
   teamTwo: Sequelize.STRING,
   teamTwoScore: Sequelize.STRING,
   date: Sequelize.INTEGER,
+  teamId: {
+    type: Sequelize.INTEGER,
+    references: {
+       model: 'team', // 'persons' refers to table name
+       key: 'id' // 'id
+    }}
 });
 
 
