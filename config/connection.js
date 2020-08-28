@@ -4,6 +4,7 @@
 
 // Requiring mysql package
 var mysql = require("mysql");
+require('dotenv').config;
 
 // Setting up our connection information
 var source = {
@@ -11,7 +12,7 @@ var source = {
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "password",
+    password: process.env.password,
     database: "league_manager_db"
   }
 };

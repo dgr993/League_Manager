@@ -40,10 +40,7 @@ var league_manager_db = sequelize.define("game_history", {
 
 // Syncs with DB
 league_manager_db.sync();
-// i made a change
 
 
 // Makes the Chirp Model available for other files (will also create a table)
 module.exports = league_manager_db;
-
-
