@@ -11,30 +11,32 @@ var league_manager_db = sequelize.define("league", {
 });
 
 var league_manager_db = sequelize.define("team", {
-    teamName: Sequelize.STRING,
-    teamWins: Sequelize.INTEGER,
-    teamLosses: Sequelize.INTEGER,
-    teamCoach: Sequelize.STRING,
-    league: Sequelize.STRING
-  });
 
-  var league_manager_db = sequelize.define("player", {
-    playerName: Sequelize.STRING,
-    playerAge: Sequelize.INTEGER,
-    //foreign key of coach
-    //customizable titles, parent name, stats(rbi, )
-    //foreign key of current team
-  });
+  teamName: Sequelize.STRING,
+  teamWins: Sequelize.INTEGER,
+  teamLosses: Sequelize.INTEGER,
+  teamCoach: Sequelize.STRING
+  //foreign key of league
+});
 
-  var league_manager_db = sequelize.define("game_history", {
-    teamScore: Sequelize.STRING,
-    //foreign key each team
-    teamOne: Sequelize.STRING,
-    teamOneScore: Sequelize.STRING,
-    teamTwo: Sequelize.STRING,
-    teamTwoScore: Sequelize.STRING,
-    date: Sequelize.INTEGER,
-  });
+var league_manager_db = sequelize.define("player", {
+  playerName: Sequelize.STRING,
+  playerAge: Sequelize.INTEGER,
+  //foreign key of coach
+  //customizable titles, parent name, stats(rbi, )
+  //foreign key of current team
+});
+
+var league_manager_db = sequelize.define("game_history", {
+  teamScore: Sequelize.STRING,
+  //foreign key each team
+  teamOne: Sequelize.STRING,
+  teamOneScore: Sequelize.STRING,
+  teamTwo: Sequelize.STRING,
+  teamTwoScore: Sequelize.STRING,
+  date: Sequelize.INTEGER,
+});
+
 
 // Syncs with DB
 league_manager_db.sync();
@@ -44,4 +46,4 @@ league_manager_db.sync();
 // Makes the Chirp Model available for other files (will also create a table)
 module.exports = league_manager_db;
 
-// sdjflkadj
+
