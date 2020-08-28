@@ -14,8 +14,8 @@ var league_manager_db = sequelize.define("team", {
     teamName: Sequelize.STRING,
     teamWins: Sequelize.INTEGER,
     teamLosses: Sequelize.INTEGER,
-    teamCoach: Sequelize.STRING
-    //foreign key of league
+    teamCoach: Sequelize.STRING,
+    league: Sequelize.STRING
   });
 
   var league_manager_db = sequelize.define("player", {
@@ -43,3 +43,5 @@ league_manager_db.sync();
 
 // Makes the Chirp Model available for other files (will also create a table)
 module.exports = league_manager_db;
+
+// sdjflkadj
