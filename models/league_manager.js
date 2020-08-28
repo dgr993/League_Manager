@@ -11,6 +11,7 @@ var league_manager_db = sequelize.define("league", {
 });
 
 var league_manager_db = sequelize.define("team", {
+
   teamName: Sequelize.STRING,
   teamWins: Sequelize.INTEGER,
   teamLosses: Sequelize.INTEGER,
@@ -36,6 +37,7 @@ var league_manager_db = sequelize.define("game_history", {
   date: Sequelize.INTEGER,
 });
 
+
 // Syncs with DB
 league_manager_db.sync();
 // i made a change
@@ -44,4 +46,4 @@ league_manager_db.sync();
 // Makes the Chirp Model available for other files (will also create a table)
 module.exports = league_manager_db;
 
-//This is Dylan's stuff
+
