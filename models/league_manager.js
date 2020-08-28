@@ -45,5 +45,3 @@ league_manager_db.sync();
 
 // Makes the Chirp Model available for other files (will also create a table)
 module.exports = league_manager_db;
-
-
