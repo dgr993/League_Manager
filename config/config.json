@@ -1,11 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": "thisismymacbook1*2",
+
+    "password": "",
+
     "database": "league_manager_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
-
   },
   "test": {
     "username": "root",
@@ -15,13 +16,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable":"JAWSDB_URL",
+    "use_env_variable": "JAWSDB_URL",
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
-
-    
   }
 }
