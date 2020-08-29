@@ -4,103 +4,84 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection");
 
 // Creates a "Chirp" model that matches up with DB
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var league_manager_db = sequelize.define("league", {
-  leagueName: DataTypes.STRING,
-  leagueType: DataTypes.STRING,
-  leagueOwner: DataTypes.STRING
-});
-return league_manager_db;
+    leagueName: DataTypes.STRING,
+    leagueType: DataTypes.STRING,
+    leagueOwner: DataTypes.STRING
+  });
+  return league_manager_db;
 };
 
-module.exports = function(sequelize, DataTypes) {
-var league_manager_db = sequelize.define("team", {
+module.exports = function (sequelize, DataTypes) {
+  var league_manager_db = sequelize.define("team", {
 
-  teamName: DataTypes.STRING,
-  teamWins: DataTypes.INTEGER,
-  teamLosses: DataTypes.INTEGER,
-  teamCoach: DataTypes.STRING,
-  leagueId: {
-    type: DataTypes.INTEGER,
-    references: {
-<<<<<<< HEAD:league_manager.js
-      model: 'league', // 'persons' refers to table name
-      key: 'id' // 'id
-    }
-  },
-  coachId: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: 'coach', // 'persons' refers to table name
-      key: 'id' // 'id
-    }
-  }
-=======
-       model: 'league', // 'persons' refers to table name
-       key: 'id' // 'id
-    }},
+    teamName: DataTypes.STRING,
+    teamWins: DataTypes.INTEGER,
+    teamLosses: DataTypes.INTEGER,
+    teamCoach: DataTypes.STRING,
+    leagueId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'league', // 'persons' refers to table name
+        key: 'id' // 'id
+      }
+    },
     coachId: {
       type: DataTypes.INTEGER,
       references: {
-         model: 'coach', // 'persons' refers to table name
-         key: 'id' // 'id
-      }}
->>>>>>> fb5084822153e34f1844779fe9ef9121c5f76aa5:models/league_manager.js
-
-    });
-    return league_manager_db;
-    };
-
-module.exports = function(sequelize, DataTypes) {
-var league_manager_db = sequelize.define("coach", {
-  coachName: DataTypes.STRING,
-  coachTeam: DataTypes.STRING
-});
-return league_manager_db;
-};
-
-module.exports = function(sequelize, DataTypes) {
-var league_manager_db = sequelize.define("player", {
-  playerName: DataTypes.STRING,
-  playerAge: DataTypes.INTEGER,
-  coachId: {
-    type: DataTypes.INTEGER,
-    references: {
-      model: 'coach', // 'persons' refers to table name
-      key: 'id' // 'id
+        model: 'coach', // 'persons' refers to table name
+        key: 'id' // 'id
+      }
     }
-  }
-  //customizable titles, parent name, stats(rbi, )
-  //foreign key of current team
-});
-return league_manager_db;
-};
 
-module.exports = function(sequelize, DataTypes) {
-var league_manager_db = sequelize.define("game_history", {
-  teamScore: DataTypes.STRING,
-  teamOne: DataTypes.STRING,
-  teamOneScore: DataTypes.STRING,
-  teamTwo: DataTypes.STRING,
-  teamTwoScore: DataTypes.STRING,
-  date: DataTypes.INTEGER,
-  teamId: {
-    type: DataTypes.INTEGER,
-    references: {
-<<<<<<< HEAD:league_manager.js
-      model: 'team', // 'persons' refers to table name
-      key: 'id' // 'id
-    }
-  }
-});
-=======
-       model: 'team', // 'persons' refers to table name
-       key: 'id' // 'id
-    }}
   });
   return league_manager_db;
-  };
->>>>>>> fb5084822153e34f1844779fe9ef9121c5f76aa5:models/league_manager.js
+};
+
+module.exports = function (sequelize, DataTypes) {
+  var league_manager_db = sequelize.define("coach", {
+    coachName: DataTypes.STRING,
+    coachTeam: DataTypes.STRING
+  });
+  return league_manager_db;
+};
+
+module.exports = function (sequelize, DataTypes) {
+  var league_manager_db = sequelize.define("player", {
+    playerName: DataTypes.STRING,
+    playerAge: DataTypes.INTEGER,
+    coachId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'coach', // 'persons' refers to table name
+        key: 'id' // 'id
+      }
+    }
+    //customizable titles, parent name, stats(rbi, )
+    //foreign key of current team
+  });
+  return league_manager_db;
+};
+
+module.exports = function (sequelize, DataTypes) {
+  var league_manager_db = sequelize.define("game_history", {
+    teamScore: DataTypes.STRING,
+    teamOne: DataTypes.STRING,
+    teamOneScore: DataTypes.STRING,
+    teamTwo: DataTypes.STRING,
+    teamTwoScore: DataTypes.STRING,
+    date: DataTypes.INTEGER,
+    teamId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'team', // 'persons' refers to table name
+        key: 'id' // 'id
+      }
+    }
+  });
+  return league_manager_db;
+};
 
 
 // Syncs with DB
