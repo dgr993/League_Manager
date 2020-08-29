@@ -1,9 +1,13 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
+    "password": "",
+=======
 
     "password": "",
 
+>>>>>>> a2be60a0797e0be74802a6b281f716ea9389c5b5
     "database": "league_manager_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
