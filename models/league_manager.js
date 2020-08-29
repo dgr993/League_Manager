@@ -3,73 +3,95 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
 
+
+    
+    var league = sequelize.define("league", {
+      leagueName: Sequelize.STRING,
+      leagueType: Sequelize.STRING,
+      leagueOwner: Sequelize.STRING
+    });
 // Creates a "Chirp" model that matches up with DB
-var league_manager_db = sequelize.define("league", {
-  leagueName: Sequelize.STRING,
-  leagueType: Sequelize.STRING,
-  leagueOwner: Sequelize.STRING,
-});
+// module.exports = function(sequelize, DataTypes) {
+//   var league_manager_db = sequelize.define("league", {
+//   leagueName: DataTypes.STRING,
+//   leagueType: DataTypes.STRING,
+//   leagueOwner: DataTypes.STRING
+// });
+// return league_manager_db;
+// };
 
-var league_manager_db = sequelize.define("team", {
+// module.exports = function(sequelize, DataTypes) {
+// var league_manager_db = sequelize.define("team", {
 
-  teamName: Sequelize.STRING,
-  teamWins: Sequelize.INTEGER,
-  teamLosses: Sequelize.INTEGER,
-  teamCoach: Sequelize.STRING,
-  leagueId: {
-    type: Sequelize.INTEGER,
-    references: {
-       model: 'league', // 'persons' refers to table name
-       key: 'id' // 'id
-    }},
-    coachId: {
-      type: Sequelize.INTEGER,
-      references: {
-         model: 'coach', // 'persons' refers to table name
-         key: 'id' // 'id
-      }}
+//   teamName: DataTypes.STRING,
+//   teamWins: DataTypes.INTEGER,
+//   teamLosses: DataTypes.INTEGER,
+//   teamCoach: DataTypes.STRING,
+//   leagueId: {
+//     type: DataTypes.INTEGER,
+//     references: {
+//        model: 'league', // 'persons' refers to table name
+//        key: 'id' // 'id
+//     }},
+//     coachId: {
+//       type: DataTypes.INTEGER,
+//       references: {
+//          model: 'coach', // 'persons' refers to table name
+//          key: 'id' // 'id
+//       }}
 
-});
+//     });
+//     return league_manager_db;
+//     };
 
-var league_manager_db = sequelize.define("coach", {
-  coachName: Sequelize.STRING,
-  coachTeam: Sequelize.STRING
-});
+// module.exports = function(sequelize, DataTypes) {
+// var league_manager_db = sequelize.define("coach", {
+//   coachName: DataTypes.STRING,
+//   coachTeam: DataTypes.STRING
+// });
+// return league_manager_db;
+// };
 
-var league_manager_db = sequelize.define("player", {
-  playerName: Sequelize.STRING,
-  playerAge: Sequelize.INTEGER,
-  coachId: {
-    type: Sequelize.INTEGER,
-    references: {
-       model: 'coach', // 'persons' refers to table name
-       key: 'id' // 'id
-    }}
-  //customizable titles, parent name, stats(rbi, )
-  //foreign key of current team
-});
+// module.exports = function(sequelize, DataTypes) {
+// var league_manager_db = sequelize.define("player", {
+//   playerName: DataTypes.STRING,
+//   playerAge: DataTypes.INTEGER,
+//   coachId: {
+//     type: DataTypes.INTEGER,
+//     references: {
+//        model: 'coach', // 'persons' refers to table name
+//        key: 'id' // 'id
+//     }}
+//   //customizable titles, parent name, stats(rbi, )
+//   //foreign key of current team
+// });
+// return league_manager_db;
+// };
 
-var league_manager_db = sequelize.define("game_history", {
-  teamScore: Sequelize.STRING,
-  teamOne: Sequelize.STRING,
-  teamOneScore: Sequelize.STRING,
-  teamTwo: Sequelize.STRING,
-  teamTwoScore: Sequelize.STRING,
-  date: Sequelize.INTEGER,
-  teamId: {
-    type: Sequelize.INTEGER,
-    references: {
-       model: 'team', // 'persons' refers to table name
-       key: 'id' // 'id
-    }}
-});
+// module.exports = function(sequelize, DataTypes) {
+// var league_manager_db = sequelize.define("game_history", {
+//   teamScore: DataTypes.STRING,
+//   teamOne: DataTypes.STRING,
+//   teamOneScore: DataTypes.STRING,
+//   teamTwo: DataTypes.STRING,
+//   teamTwoScore: DataTypes.STRING,
+//   date: DataTypes.INTEGER,
+//   teamId: {
+//     type: DataTypes.INTEGER,
+//     references: {
+//        model: 'team', // 'persons' refers to table name
+//        key: 'id' // 'id
+//     }}
+//   });
+//   return league_manager_db;
+//   };
 
 
-// Syncs with DB
-league_manager_db.sync();
+// // Syncs with DB
+league.sync();
 
 
-// Makes the Chirp Model available for other files (will also create a table)
-module.exports = league_manager_db;
+// // Makes the Chirp Model available for other files (will also create a table)
+module.exports = league;
 
-//Figuring out branches and merging
+// //Figuring out branches and merging
