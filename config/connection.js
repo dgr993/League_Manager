@@ -5,12 +5,9 @@
 // Dependencies
 var Sequelize = require("sequelize");
 require('dotenv').config;
-var connection;
 
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-}
-else {
+
+
 // Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
 var sequelize = new Sequelize("league_manager_db", "root", process.env.password, {
   host: "localhost",
@@ -23,7 +20,7 @@ var sequelize = new Sequelize("league_manager_db", "root", process.env.password,
   }
 
 });
-};
+
 
 // Exports the connection for other files to use
 module.exports = sequelize;
