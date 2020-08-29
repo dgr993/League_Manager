@@ -1,17 +1,10 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "",
-=======
-
-    "password": "",
-
->>>>>>> a2be60a0797e0be74802a6b281f716ea9389c5b5
+    "password": "Knox107983*",
     "database": "league_manager_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
-
   },
   "test": {
     "username": "root",
@@ -21,13 +14,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable":"JAWSDB_URL",
+    "use_env_variable": "JAWSDB_URL",
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
-
-    
   }
 }
