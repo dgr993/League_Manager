@@ -14,5 +14,11 @@ module.exports = function (sequelize, DataTypes) {
       //   }
       // }
     });
+
+    GameHistory.teamID = function(models) {
+      GameHistory.hasMany(models.Post, {
+        onDelete: "cascade"
+      });
+    }
     return GameHistory;
   };
