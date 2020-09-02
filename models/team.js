@@ -4,22 +4,35 @@ module.exports = function (sequelize, DataTypes) {
       teamName: DataTypes.STRING,
       teamWins: DataTypes.INTEGER,
       teamLosses: DataTypes.INTEGER,
-      teamCoach: DataTypes.STRING,
-      // leagueId: {
-      //   type: DataTypes.INTEGER,
-      //   references: {
-      //     model: 'League', // 'persons' refers to table name
-      //     key: 'id' // 'id
-      //   }
-      // },
-      // coachId: {
-      //   type: DataTypes.INTEGER,
-      //   references: {
-      //     model: 'Coach', // 'persons' refers to table name
-      //     key: 'id' // 'id
-      //   }
-      // }
-  
+      teamCoach: DataTypes.STRING,  
     });
+
+    Team.associate = function(models) {
+      // Associating Author with Posts
+      // When an Author is deleted, also delete any associated Posts
+      Team.hasMany(models.GameHistory, {
+        onDelete: "cascade"
+      });
+    };
+
+    Team.associate = function(models) {
+      // We're saying that a Team should belong to an GameHistory
+      // A Post can't be created without an GameHistory due to the foreign key constraint
+      Team.belongsTo(models.Coach, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
+    Team.associate = function(models) {
+      // We're saying that a Team should belong to an GameHistory
+      // A Post can't be created without an GameHistory due to the foreign key constraint
+      Team.belongsTo(models.League, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
     return Team;
   };

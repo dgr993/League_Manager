@@ -6,13 +6,6 @@ module.exports = function (sequelize, DataTypes) {
       teamTwo: DataTypes.STRING,
       teamTwoScore: DataTypes.STRING,
       date: DataTypes.INTEGER,
-      // teamId: {
-      //   type: DataTypes.INTEGER,
-      //   associations: {
-      //     model: 'Team', // 'persons' refers to table name
-      //     key: 'id' // 'id
-      //   }
-      // }
     });
 
     GameHistory.associate = function(models) {
