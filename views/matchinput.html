@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../public/css/style.css" type="text/css" />
     <title>League_Manager</title>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/assets/js/league.js"></script>
+    <script src="/assets/js/league.js"></script>h1 {text-align: center;}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -41,34 +41,42 @@
     <br>
 
     <div class="container">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Team 1</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
+
+        <h1>Match Input</h1>
+        <form>
+            <div class="row">
+                <div class="col-6">
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Home Team</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Celtics</option>
+                            <option>Heat</option>
+                            <option>Raptors</option>
+                            <option>Bucks</option>
+                        </select>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Score</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Points">
+                        </div>
+                    </div>
+                </div>
+                </br>
+                <div class="col-6">
+                    <label for="exampleFormControlSelect1">Away Team</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Celtics</option>
+                        <option>Heat</option>
+                        <option>Raptors</option>
+                        <option>Bucks</option>
+                    </select>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Score</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Points">
+                    </div>
                 </div>
             </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-        </div>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Team 2</button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                    <div role="separator" class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-            </div>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-        </div>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

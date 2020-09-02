@@ -15,10 +15,10 @@ module.exports = function (sequelize, DataTypes) {
       // }
     });
 
-    GameHistory.associate = function(models) {
-      GameHistory.hasMany(models.Post, {
-        onDelete: "cascade"
-      });
-    }
+    // GameHistory.associate = function(models) {
+    //   GameHistory.hasMany(models.teamId, {
+    //     onDelete: "cascade"
+    //   });
+    // }
     return GameHistory;
   };
