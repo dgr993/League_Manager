@@ -2,15 +2,29 @@ module.exports = function (sequelize, DataTypes) {
     var Player = sequelize.define("Player", {
       playerName: DataTypes.STRING,
       playerAge: DataTypes.INTEGER,
-      // coachId: {
-      //   type: DataTypes.INTEGER,
-      //   references: {
-      //     model: 'Coach', // 'persons' refers to table name
-      //     key: 'id' // 'id
-      //   }
-      // }
-      //customizable titles, parent name, stats(rbi, )
-      //foreign key of current team
+     
     });
+
+    Player.associate = function(models) {
+      // We're saying that a Team should belong to an GameHistory
+      // A Post can't be created without an GameHistory due to the foreign key constraint
+      Player.belongsTo(models.Coach, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
+    Player.associate = function(models) {
+      // We're saying that a Team should belong to an GameHistory
+      // A Post can't be created without an GameHistory due to the foreign key constraint
+      Player.belongsTo(models.Team, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
+    
     return Player;
   };
