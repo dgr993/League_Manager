@@ -15,10 +15,14 @@ module.exports = function (sequelize, DataTypes) {
       // }
     });
 
-    // GameHistory.associate = function(models) {
-    //   GameHistory.hasMany(models.teamId, {
-    //     onDelete: "cascade"
-    //   });
-    // }
+    GameHistory.associate = function(models) {
+      // We're saying that a Team should belong to an GameHistory
+      // A Post can't be created without an GameHistory due to the foreign key constraint
+      GameHistory.belongsTo(models.Team, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
     return GameHistory;
   };
