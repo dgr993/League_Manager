@@ -11,7 +11,7 @@ git push origin master
 
 git checkout master
 git pull
-git checkout RC
+git checkout Rc
 git merge master
 git add .
 git commit -m "merge to master"
