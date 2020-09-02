@@ -9,8 +9,7 @@ git push origin master
 
 
 
-git checkout master
-git pull
+
 git checkout RC
 git merge master
 git add .
