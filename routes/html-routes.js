@@ -33,6 +33,6 @@ module.exports = function (app) {
     });
 
     app.get('/coaches', isAuthenticated, function (req, res, next) {
-        res.render('coaches', { layout: 'main', template: 'coaches' });
+        res.render('coaches', { layout: 'loggedin' });
     });
 };
