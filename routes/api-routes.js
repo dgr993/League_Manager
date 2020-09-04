@@ -58,7 +58,7 @@ module.exports = function (app) {
     //post info to db
     app.post("/api/players", function (req, res) {
         console.log(req.body);
-        db.Player.create({
+        db.player.create({
             name: req.body.name,
             age: req.body.age
         })
