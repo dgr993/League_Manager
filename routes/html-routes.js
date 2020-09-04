@@ -8,8 +8,7 @@ module.exports = function (app) {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.render("homepage"
-            // ,  { layout: 'loggedin' }
+            res.render("homepage", { layout: 'everypage' }
             );
         }
         res.render("signup");
@@ -26,8 +25,19 @@ module.exports = function (app) {
 
     app.get("/createplayer", (req, res) => {
         // If the user already has an account send them to the members page
-        res.render('create_new_players');
+        res.render('create_new_players', { layout: 'everypage' });
     });
+
+    app.get("/createteam", (req, res) => {
+        // If the user already has an account send them to the members page
+        res.render('create_new_team', { layout: 'everypage' });
+    });
+
+    app.get("/createleague", (req, res) => {
+        // If the user already has an account send them to the members page
+        res.render('create_new_league', { layout: 'everypage' });
+    });
+
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
@@ -38,19 +48,5 @@ module.exports = function (app) {
 
     app.get('/coaches', isAuthenticated, function (req, res, next) {
         res.render('coaches', { layout: 'loggedin' });
-    });
-
-    // navigation bar for each page needed
-    app.get('/homepage', isAuthenticated, function (req, res, next) {
-        res.render('homepage', { layout: 'everypage' });
-    });
-    app.get('/newplayers', isAuthenticated, function (req, res, next) {
-        res.render('create_new_players', { layout: 'everypage' });
-    });
-    app.get('/newteam', isAuthenticated, function (req, res, next) {
-        res.render('create_new_team', { layout: 'everypage' });
-    });
-    app.get('/newleague', isAuthenticated, function (req, res, next) {
-        res.render('create_new_league', { layout: 'everypage' });
     });
 };
