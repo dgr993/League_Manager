@@ -3,6 +3,7 @@ module.exports = function (sequelize, DataTypes) {
       playerName: DataTypes.STRING,
       playerAge: DataTypes.INTEGER,
 
+
     });
 
     Player.associate = function(models) {
