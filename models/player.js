@@ -105,8 +105,8 @@ module.exports = function (app) {
         res.json(dbPlayer);
       });
 
-    };
-    
-    return Player;
-  };
+  });
+
+  return Player;
+};
 
