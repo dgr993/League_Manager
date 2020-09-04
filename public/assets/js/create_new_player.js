@@ -11,7 +11,7 @@ $(document).ready(() => {
             player: playerInput.val().trim(),
             age: ageInput.val().trim()
         };
-
+        console.log(userData);
         if (!userData.player || !userData.age) {
             return;
         }
