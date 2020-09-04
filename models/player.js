@@ -1,11 +1,16 @@
 module.exports = function (sequelize, DataTypes) {
-    var Player = sequelize.define("Player", {
-      playerName: DataTypes.STRING,
-      playerAge: DataTypes.INTEGER,
+  var Player = sequelize.define("Player", {
+    playerName: DataTypes.STRING,
+    playerAge: DataTypes.INTEGER,
 
     });
 
 
+<<<<<<< HEAD
+  });
+
+=======
+>>>>>>> master
   Player.associate = function (models) {
     // We're saying that a Team should belong to an GameHistory
     // A Post can't be created without an GameHistory due to the foreign key constraint
