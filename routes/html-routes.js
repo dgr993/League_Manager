@@ -8,7 +8,9 @@ module.exports = function (app) {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.render("homepage",  { layout: 'loggedin' });
+
+            return res.render("homepage",  { layout: 'loggedin' });
+
         }
         res.render("signup");
     });
@@ -17,9 +19,14 @@ module.exports = function (app) {
     app.get("/login", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/");
+            return res.redirect("/");
         }
         res.render("login");
+    });
+
+    app.get("/createplayer", (req, res) => {
+        // If the user already has an account send them to the members page
+        res.render('create_new_players');
     });
 
     // Here we've add our isAuthenticated middleware to this route.
@@ -31,5 +38,14 @@ module.exports = function (app) {
 
     app.get('/coaches', isAuthenticated, function (req, res, next) {
         res.render('coaches', { layout: 'loggedin' });
+    });
+    app.get('/schedule', isAuthenticated, function (req, res, next) {
+        res.render('schedule', { layout: 'loggedin' });
+    });
+    app.get('/matchinput', isAuthenticated, function (req, res, next) {
+        res.render('matchinput', { layout: 'loggedin' });
+    });
+    app.get('/teams', isAuthenticated, function (req, res, next) {
+        res.render('teams', { layout: 'loggedin' });
     });
 };
