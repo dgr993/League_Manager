@@ -1,7 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Sacul7garages",
+    "password": "",
+
     "database": "league_manager_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
