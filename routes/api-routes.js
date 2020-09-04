@@ -30,6 +30,18 @@ module.exports = function (app) {
             .catch(err => {
                 res.status(401).json(err);
             });
+
+        // app.post("/api/player", (req, res) => {
+        //     db.Player.create({
+        //         player: req.body.player,
+        //         age: req.body.age
+        //     })
+        //         .then(() => {
+        //             res.redirect(307, "/api/player");
+        //         })
+        //         .catch(err => {
+        //             res.status(401).json(err);
+        //         });
     });
 
     // Route for logging user out
@@ -56,14 +68,14 @@ module.exports = function (app) {
     });
 
     //post info to db
-    app.post("/api/players", function(req, res) {
+    app.post("/api/players", function (req, res) {
         console.log(req.body);
         db.Player.create({
-          Name: req.body.name,
-          Age: req.body.age
+            name: req.body.name,
+            age: req.body.age
         })
-          .then(function(dbPlayer) {
-            res.json(dbPlayer);
-          });
-      });
+            .then(function (dbPlayer) {
+                res.json(dbPlayer);
+            });
+    });
 };
