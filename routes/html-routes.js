@@ -8,13 +8,10 @@ module.exports = function (app) {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-<<<<<<< HEAD
+
             return res.render("homepage",  { layout: 'loggedin' });
-=======
-            res.render("homepage"
-            // ,  { layout: 'loggedin' }
-            );
->>>>>>> 0450a3abad6949fd4b8f2749e4578ab42286d56b
+
+            
         }
         res.render("signup");
     });
