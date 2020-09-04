@@ -10,7 +10,7 @@ module.exports = function (app) {
         if (req.user) {
 
             return res.render("homepage"
-            // ,  { layout: 'loggedin' }
+                // ,  { layout: 'loggedin' }
             );
 
         }
@@ -26,19 +26,19 @@ module.exports = function (app) {
         res.render("signup");
     });
 
-//takes user to creating new player
+    //takes user to creating new player
     app.get("/createplayer", (req, res) => {
         // If the user already has an account send them to the members page
         res.render('create_new_players');
     });
 
-//takes user to creating new team
+    //takes user to creating new team
     app.get("/createteam", (req, res) => {
         // If the user already has an account send them to the members page
         res.render('create_new_team');
     });
 
-//takes user to creating new league
+    //takes user to creating new league
     app.get("/createleague", (req, res) => {
         // If the user already has an account send them to the members page
         res.render('create_new_league');
@@ -52,18 +52,18 @@ module.exports = function (app) {
 
 
     app.get('/coaches', isAuthenticated, function (req, res, next) {
-        res.render('coaches', { layout: 'loggedin' });
+        res.render('coaches', { layout: 'everypage' });
     });
     app.get('/schedule', isAuthenticated, function (req, res, next) {
-        res.render('schedule', { layout: 'loggedin' });
+        res.render('schedule', { layout: 'everypage' });
     });
     app.get('/matchinput', isAuthenticated, function (req, res, next) {
-        res.render('matchinput', { layout: 'loggedin' });
+        res.render('matchinput', { layout: 'everypage' });
     });
     app.get('/teams', isAuthenticated, function (req, res, next) {
-        res.render('teams', { layout: 'loggedin' });
+        res.render('teams', { layout: 'everypage' });
     });
-    app.get('/create_new_league', function (req, res, next) {
+    app.get('/create_new_league', isAuthenticated, function (req, res, next) {
         res.render('create_new_league');
     });
 };
