@@ -1,6 +1,6 @@
 $(document).ready(() => {
     // Getting references to our form and input
-    const createNew = $("form.create_new");
+    const createNew = $("form.player");
     const playerInput = $("input#player-input");
     const ageInput = $("input#age-input");
 
