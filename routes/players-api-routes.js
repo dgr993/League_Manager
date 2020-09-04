@@ -1,21 +1,21 @@
 module.exports = function (app) {
-
-    // GET route for getting all of the posts
-    app.get("/api/player", function (req, res) {
-        var query = {};
-        if (req.query.player_id) {
-            query.PlayerId = req.query.player_id;
-        }
-        // Here we add an "include" property to our options in our findAll query
-        // We set the value to an array of the models we want to include in a left outer join
-        // In this case, just db.Author
-        db.Player.findAll({
-            where: query,
-            include: [db.Player]
-        }).then(function (dbPlayer) {
-            res.json(dbPlayer);
+    app.
+        // GET route for getting all of the posts
+        app.get("/api/player", function (req, res) {
+            var query = {};
+            if (req.query.player_id) {
+                query.PlayerId = req.query.player_id;
+            }
+            // Here we add an "include" property to our options in our findAll query
+            // We set the value to an array of the models we want to include in a left outer join
+            // In this case, just db.Author
+            db.Player.findAll({
+                where: query,
+                include: [dbPlayer]
+            }).then(function (dbPlayer) {
+                res.json(dbPlayer);
+            });
         });
-    });
 
     // Get route for retrieving a single post
     app.get("/api/players/:id", function (req, res) {
