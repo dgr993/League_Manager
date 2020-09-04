@@ -8,8 +8,8 @@ module.exports = function (app) {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.render("homepage"
-            // ,  { layout: 'loggedin' }
+            return res.render("homepage"
+                // ,  { layout: 'loggedin' }
             );
         }
         res.render("signup");
@@ -19,7 +19,7 @@ module.exports = function (app) {
     app.get("/login", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/");
+            return res.redirect("/");
         }
         res.render("login");
     });
