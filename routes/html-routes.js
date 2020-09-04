@@ -8,7 +8,13 @@ module.exports = function (app) {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
+<<<<<<< HEAD
             return res.render("homepage",  { layout: 'loggedin' });
+=======
+            res.render("homepage"
+            // ,  { layout: 'loggedin' }
+            );
+>>>>>>> 0450a3abad6949fd4b8f2749e4578ab42286d56b
         }
         res.render("signup");
     });
@@ -20,6 +26,11 @@ module.exports = function (app) {
             return res.redirect("/");
         }
         res.render("login");
+    });
+
+    app.get("/createplayer", (req, res) => {
+        // If the user already has an account send them to the members page
+        res.render('create_new_players');
     });
 
     // Here we've add our isAuthenticated middleware to this route.
