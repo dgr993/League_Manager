@@ -9,7 +9,9 @@ module.exports = function (app) {
         // If the user already has an account send them to the members page
         if (req.user) {
 
-            return res.render("homepage",  { layout: 'loggedin' });
+            return res.render("homepage"
+            // ,  { layout: 'loggedin' }
+            );
 
         }
         res.render("signup");
@@ -47,5 +49,8 @@ module.exports = function (app) {
     });
     app.get('/teams', isAuthenticated, function (req, res, next) {
         res.render('teams', { layout: 'loggedin' });
+    });
+    app.get('/create_new_league', function (req, res, next) {
+        res.render('create_new_league');
     });
 };
