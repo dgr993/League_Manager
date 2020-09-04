@@ -5,7 +5,7 @@ $(document).ready(() => {
     const ageInput = $("input#age-input");
 
     // When the create button is clicked, we validate the email and password are not blank
-    createNew.on("submit", event => {
+    $('.submit').on("submit", event => {
         event.preventDefault();
         const userData = {
             player: playerInput.val().trim(),
