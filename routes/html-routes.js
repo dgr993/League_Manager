@@ -19,7 +19,7 @@ module.exports = function (app) {
     app.get("/login", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-            res.redirect("/");
+            return res.redirect("/");
         }
         res.render("login");
     });
@@ -38,5 +38,14 @@ module.exports = function (app) {
 
     app.get('/coaches', isAuthenticated, function (req, res, next) {
         res.render('coaches', { layout: 'loggedin' });
+    });
+    app.get('/schedule', isAuthenticated, function (req, res, next) {
+        res.render('schedule', { layout: 'loggedin' });
+    });
+    app.get('/matchinput', isAuthenticated, function (req, res, next) {
+        res.render('matchinput', { layout: 'loggedin' });
+    });
+    app.get('/teams', isAuthenticated, function (req, res, next) {
+        res.render('teams', { layout: 'loggedin' });
     });
 };
