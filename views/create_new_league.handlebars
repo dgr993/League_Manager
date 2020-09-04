@@ -1,28 +1,32 @@
 <div class="conatiner">
     <form>
-        <div class="row">
-            <div class="col">
-                <p></p>
+        <div class="mb-3">
+            <label for="validationTextarea">League Name</label>
+            <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea"
+                required></textarea>
+            <div class="invalid-feedback">
+
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="LeagueName"></label>League Name</label>
-                    <input type="email" class="form-control" placeholder="Enter League Name">
+            <div class="mb-3">
+                <label for="validationTextarea">Sport Type</label>
+                <textarea class="form-control is-invalid" id="validationTextarea"
+                    placeholder="Required example textarea" required></textarea>
+                <div class="invalid-feedback">
+
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-            <div class="col">
-                <p></p>
+        </div>
+        <div class="mb-3">
+            <label for="validationTextarea">League Owner</label>
+            <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea"
+                required></textarea>
+            <div class="invalid-feedback">
+
             </div>
         </div>
 
-    </form>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+</form>
 </div>

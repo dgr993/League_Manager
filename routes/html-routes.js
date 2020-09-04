@@ -26,9 +26,22 @@ module.exports = function (app) {
         res.render("signup");
     });
 
+//takes user to creating new player
     app.get("/createplayer", (req, res) => {
         // If the user already has an account send them to the members page
         res.render('create_new_players');
+    });
+
+//takes user to creating new team
+    app.get("/createteam", (req, res) => {
+        // If the user already has an account send them to the members page
+        res.render('create_new_team');
+    });
+
+//takes user to creating new league
+    app.get("/createleague", (req, res) => {
+        // If the user already has an account send them to the members page
+        res.render('create_new_league');
     });
 
     // Here we've add our isAuthenticated middleware to this route.
