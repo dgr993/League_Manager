@@ -14,16 +14,16 @@ module.exports = function (app) {
             );
 
         }
-        res.render("signup");
+        res.render("login");
     });
 
 
-    app.get("/login", (req, res) => {
+    app.get("/signup", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
             return res.redirect("/");
         }
-        res.render("login");
+        res.render("signup");
     });
 
     app.get("/createplayer", (req, res) => {
