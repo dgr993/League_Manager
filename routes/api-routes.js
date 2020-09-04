@@ -54,4 +54,16 @@ module.exports = function (app) {
             });
         }
     });
+
+    //post info to db
+    app.post("/api/players", function(req, res) {
+        console.log(req.body);
+        db.Player.create({
+          Name: req.body.name,
+          Age: req.body.age
+        })
+          .then(function(dbPlayer) {
+            res.json(dbPlayer);
+          });
+      });
 };
