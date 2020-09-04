@@ -9,7 +9,7 @@ module.exports = function (app) {
         // If the user already has an account send them to the members page
         if (req.user) {
             res.render("homepage"
-            // ,  { layout: 'loggedin' }
+            ,  { layout: 'loggedin' }
             );
         }
         res.render("signup");
