@@ -8,41 +8,36 @@ module.exports = function (app) {
     app.get("/", (req, res) => {
         // If the user already has an account send them to the members page
         if (req.user) {
-
-            return res.render("homepage"
-                // ,  { layout: 'loggedin' }
+            res.render("homepage", { layout: 'everypage' }
             );
-
-        }
-        res.render("login");
-    });
-
-
-    app.get("/signup", (req, res) => {
-        // If the user already has an account send them to the members page
-        if (req.user) {
-            return res.redirect("/");
         }
         res.render("signup");
     });
 
-    //takes user to creating new player
+
+    app.get("/login", (req, res) => {
+        // If the user already has an account send them to the members page
+        if (req.user) {
+            return res.redirect("/");
+        }
+        res.render("login");
+    });
+
     app.get("/createplayer", (req, res) => {
         // If the user already has an account send them to the members page
-        res.render('create_new_players');
+        res.render('create_new_players', { layout: 'everypage' });
     });
 
-    //takes user to creating new team
     app.get("/createteam", (req, res) => {
         // If the user already has an account send them to the members page
-        res.render('create_new_team');
+        res.render('create_new_team', { layout: 'everypage' });
     });
 
-    //takes user to creating new league
     app.get("/createleague", (req, res) => {
         // If the user already has an account send them to the members page
-        res.render('create_new_league');
+        res.render('create_new_league', { layout: 'everypage' });
     });
+
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
@@ -51,19 +46,16 @@ module.exports = function (app) {
     // });
 
 
-    app.get('/coaches', isAuthenticated, function (req, res, next) {
-        res.render('coaches', { layout: 'everypage' });
-    });
-    app.get('/schedule', isAuthenticated, function (req, res, next) {
-        res.render('schedule', { layout: 'everypage' });
-    });
-    app.get('/matchinput', isAuthenticated, function (req, res, next) {
-        res.render('matchinput', { layout: 'everypage' });
-    });
-    app.get('/teams', isAuthenticated, function (req, res, next) {
-        res.render('teams', { layout: 'everypage' });
-    });
-    app.get('/create_new_league', isAuthenticated, function (req, res, next) {
-        res.render('create_new_league');
-    });
+    // app.get('/coaches', isAuthenticated, function (req, res, next) {
+    //     res.render('coaches', { layout: 'everypage' });
+    // });
+    // app.get('/schedule', isAuthenticated, function (req, res, next) {
+    //     res.render('schedule', { layout: 'everypage' });
+    // });
+    // app.get('/matchinput', isAuthenticated, function (req, res, next) {
+    //     res.render('matchinput', { layout: 'everypage' });
+    // });
+    // app.get('/teams', isAuthenticated, function (req, res, next) {
+    //     res.render('teams', { layout: 'everypage' });
+    // });
 };
