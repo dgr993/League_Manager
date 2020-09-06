@@ -16,7 +16,7 @@ $(document).ready(() => {
             return;
         }
         // If we have an email and password, run the signUpUser function
-        createNewPlayer(userData.player, userData.age);
+        createNewPlayer(userData.playerName, userData.playerAge);
         playerInput.val("");
         ageInput.val("");
     });
