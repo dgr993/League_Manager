@@ -68,13 +68,9 @@ module.exports = function (app) {
     });
 
     //post info to db
-    app.post("/api/players", function (req, res) {
+    app.post("/api/player", function (req, res) {
         console.log(req.body);
-<<<<<<< HEAD
-        db.player.create({
-=======
         db.Player.create({
->>>>>>> master
             name: req.body.name,
             age: req.body.age
         })
