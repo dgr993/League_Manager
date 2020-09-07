@@ -41,7 +41,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       unique: true,
       validate: {
-        isName: true
+        len: [1]
       }
     },
     // The age cannot be null
