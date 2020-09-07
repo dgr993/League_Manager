@@ -1,7 +1,21 @@
+<<<<<<< HEAD
 // module.exports = function (sequelize, DataTypes) {
 //   var Player = sequelize.define("Player", {
 //     playerName: DataTypes.STRING,
 //     playerAge: DataTypes.INTEGER,
+=======
+module.exports = function (sequelize, DataTypes) {
+  const Player = sequelize.define("Player", {
+    playerName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true
+    },
+    playerAge: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+  }
+>>>>>>> master
 
 //   });
 
