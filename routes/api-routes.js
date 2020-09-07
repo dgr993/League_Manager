@@ -78,4 +78,15 @@ module.exports = function (app) {
                 res.json(dbPlayer);
             });
     });
+    app.post("/api/league", function (req, res) {
+        console.log(req.body);
+        db.player.create({
+            leagueName: req.body.leaguename,
+            leagueType: req.body.leagueType,
+            leagueOwner: DataTypes.String
+        })
+            .then(function (dbLeague) {
+                res.json(dbLeague);
+            });
+    });
 };
