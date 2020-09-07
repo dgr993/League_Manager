@@ -32,15 +32,15 @@
     margin-left: 50px;
   }
 
-  .waves-effect{
-    /* margin: 0;
+  /* .waves-effect{
+    margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
   }
-  
+  */
   #main {
     transition: margin-left .5s;
     padding: 20px;
