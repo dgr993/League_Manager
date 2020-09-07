@@ -71,11 +71,22 @@ module.exports = function (app) {
     app.post("/api/players", function (req, res) {
         console.log(req.body);
         db.Player.create({
-            name: req.body.name,
-            age: req.body.age
+            playerName: req.body.playerName,
+            playerAge: req.body.playerAge
         })
             .then(function (dbPlayer) {
                 res.json(dbPlayer);
+            });
+    });
+    app.post("/api/league", function (req, res) {
+        console.log(req.body);
+        db.player.create({
+            leagueName: req.body.leaguename,
+            leagueType: req.body.leagueType,
+            leagueOwner: DataTypes.String
+        })
+            .then(function (dbLeague) {
+                res.json(dbLeague);
             });
     });
 };
