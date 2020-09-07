@@ -9,7 +9,7 @@ module.exports = function (app) {
             // Here we add an "include" property to our options in our findAll query
             // We set the value to an array of the models we want to include in a left outer join
             // In this case, just db.Author
-            db.Player.findAll({
+            db.playerName.findAll({
                 where: query,
                 include: [dbPlayer]
             }).then(function (dbPlayer) {
@@ -22,13 +22,13 @@ module.exports = function (app) {
         // Here we add an "include" property to our options in our findOne query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Author
-        db.Post.findOne({
+        db.playerName.findOne({
             where: {
                 id: req.params.id
             },
-            include: [db.Player]
-        }).then(function (dbPlayer) {
-            res.json(dbPlayer);
+            include: [db.playerName]
+        }).then(function (dbplayerName) {
+            res.json(dbplayerName);
         });
     });
 
