@@ -1,18 +1,18 @@
 $(document).ready(() => {
     // Getting references to our form and input
     const createNew = $("form.create_new");
-    const teamInput = $("input#team-input");
-    const coachInput = $("input#coach-input");
+    const nameInput = $("input#name-input");
+    const ageInput = $("input#age-input");
 
     // When the create button is clicked, we validate the email and password are not blank
     createNew.on("submit", event => {
         event.preventDefault();
         const userData = {
-            team: teamInput.val().trim(),
-            coach: coachInput.val().trim()
+            name: nameInput.val().trim(),
+            age: ageInput.val().trim()
         };
 
-        if (!userData.team || !userData.coach) {
+        if (!userData.name || !userData.age) {
             return;
         }
         // If we have an email and password, run the signUpUser function
@@ -23,13 +23,13 @@ $(document).ready(() => {
 
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-    function createPlayer(team, coach) {
+    function createNewPlayer(playerName, playerAge) {
         $.post("/api/new", {
-            team: team,
-            coach: coach
+            playerName: playerName,
+            playerAge: playerAge
         })
             .then(() => {
-                window.location.replace("/leagues");
+                window.location.replace("/players");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch(handleLoginErr);
