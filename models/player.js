@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-// module.exports = function (sequelize, DataTypes) {
-//   var Player = sequelize.define("Player", {
-//     playerName: DataTypes.STRING,
-//     playerAge: DataTypes.INTEGER,
-=======
 module.exports = function (sequelize, DataTypes) {
   const Player = sequelize.define("Player", {
     playerName: {
@@ -14,8 +8,7 @@ module.exports = function (sequelize, DataTypes) {
     playerAge: {
       type: DataTypes.INTEGER,
       allowNull: false
-  }
->>>>>>> master
+    }
 
 //   });
 
@@ -48,23 +41,23 @@ module.exports = function (sequelize, DataTypes) {
 
 // Creating our User model
 module.exports = function (sequelize, DataTypes) {
-  const Player = sequelize.define("Player", {
-    // The name cannot be null
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        len: [1]
-      }
-    },
-    // The age cannot be null
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    }
-  });
+      const Player = sequelize.define("Player", {
+        // The name cannot be null
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          unique: true,
+          validate: {
+            len: [1]
+          }
+        },
+        // The age cannot be null
+        age: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+        }
+      });
 
 
-  return Player;
-};
+      return Player;
+    };
