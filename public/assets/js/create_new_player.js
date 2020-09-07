@@ -16,9 +16,9 @@ $(document).ready(() => {
             return;
         }
         // If we have an email and password, run the signUpUser function
-        createPlayer(userData.team, userData.coach);
-        teamInput.val("");
-        coachInput.val("");
+        createNewPlayer(userData.playerName, userData.playerAge);
+        playerInput.val("");
+        ageInput.val("");
     });
 
     // Does a post to the signup route. If successful, we are redirected to the members page
