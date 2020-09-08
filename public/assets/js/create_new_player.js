@@ -1,6 +1,6 @@
-$(document).ready(() => {
+$(document).ready(function () {
     // Getting references to our form and input
-    const createNew = $("form.player");
+    const createNew = $("form.create_new_player");
     const playerNameInput = $("input#player-input");
     const playerAgeInput = $("input#age-input");
 
@@ -24,19 +24,19 @@ $(document).ready(() => {
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
     function createNewPlayer(playerName, playerAge) {
-        $.post("/api/new", {
+        $.post("/api/newplayer", {
             playerName: playerName,
             playerAge: playerAge
         })
             .then(() => {
-                window.location.replace("/players");
+                window.location.replace("/createplayer");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
-            .catch(handleLoginErr);
+        // .catch(handleLoginErr);
     }
 
-    function handleLoginErr(err) {
-        $("#alert .msg").text(err.responseJSON);
-        $("#alert").fadeIn(500);
-    }
+    // function handleLoginErr(err) {
+    //     $("#alert .msg").text(err.responseJSON);
+    //     $("#alert").fadeIn(500);
+    // }
 });

@@ -64,7 +64,7 @@ module.exports = function (app) {
     });
 
     //post info to db
-    app.post("/api/player", function (req, res) {
+    app.post("/api/players", function (req, res) {
         console.log(req.body);
         db.Player.create({
             playerName: req.body.playerName,
@@ -74,15 +74,15 @@ module.exports = function (app) {
                 res.json(dbPlayer);
             });
     });
-    app.post("/api/league", function (req, res) {
-        console.log(req.body);
-        db.player.create({
-            leagueName: req.body.leaguename,
-            leagueType: req.body.leagueType,
-            leagueOwner: DataTypes.String
-        })
-            .then(function (dbLeague) {
-                res.json(dbLeague);
-            });
-    });
+    // app.post("/api/league", function (req, res) {
+    //     console.log(req.body);
+    //     db.player.create({
+    //         leagueName: req.body.leaguename,
+    //         leagueType: req.body.leagueType,
+    //         leagueOwner: DataTypes.String
+    //     })
+    //         .then(function (dbLeague) {
+    //             res.json(dbLeague);
+    //         });
+    // });
 };
