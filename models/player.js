@@ -1,24 +1,16 @@
 module.exports = function (sequelize, DataTypes) {
   const Player = sequelize.define("Player", {
     // The name cannot be null
-    name: {
+    playerName: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     },
     // The age cannot be null
-    age: {
+    playerAge: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
     }
   });
-
-
   return Player;
 };
 

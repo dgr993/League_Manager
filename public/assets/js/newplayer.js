@@ -1,15 +1,15 @@
-$(document).ready(function () {
+$(document).ready(() => {
     // Getting references to our form and input
-    const createNew = $("form.create_new_player");
-    const playerNameInput = $("input#player-input");
-    const playerAgeInput = $("input#age-input");
+    const createNew = $("form.player");
+    const playerInput = $("input#name-input");
+    const ageInput = $("input#age-input");
 
     // When the create button is clicked, we validate the email and password are not blank
     createNew.on("submit", event => {
         event.preventDefault();
         const userData = {
-            playerName: playerNameInput.val().trim(),
-            playerAge: playerAgeInput.val().trim()
+            playerName: playerInput.val().trim(),
+            playerAge: ageInput.val().trim()
         };
         console.log(userData);
         if (!userData.playerName || !userData.playerAge) {
@@ -17,8 +17,8 @@ $(document).ready(function () {
         }
         // If we have an email and password, run the signUpUser function
         createNewPlayer(userData.playerName, userData.playerAge);
-        playerNameInput.val("");
-        playerAgeInput.val("");
+        playerInput.val("");
+        ageInput.val("");
     });
 
     // Does a post to the signup route. If successful, we are redirected to the members page
@@ -29,14 +29,11 @@ $(document).ready(function () {
             playerAge: playerAge
         })
             .then(() => {
-                window.location.replace("/createplayer");
+                window.location.replace("/");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
-        // .catch(handleLoginErr);
+            .catch(err => {
+                console.log(err);
+            });
     }
-
-    // function handleLoginErr(err) {
-    //     $("#alert .msg").text(err.responseJSON);
-    //     $("#alert").fadeIn(500);
-    // }
 });

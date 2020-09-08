@@ -22,7 +22,7 @@ module.exports = function (app) {
     });
 
     app.get("/createplayer", (req, res) => {
-        res.render('create_new_players', { layout: 'everypage' });
+        res.render('newplayer', { layout: 'everypage' });
     });
 
     app.get("/createteam", (req, res) => {
