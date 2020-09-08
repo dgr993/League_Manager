@@ -34,7 +34,7 @@ For any questions regarding the code used please refer to our GitHub page here: 
 All contributors include:
 Dylan Dewey
 Talmage Lucas
-Ruiz 
+Ruiz Sanchez
 Trevor Otterson
 David Grant
      
