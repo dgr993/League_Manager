@@ -30,18 +30,6 @@ module.exports = function (app) {
             .catch(err => {
                 res.status(401).json(err);
             });
-
-        // app.post("/api/player", (req, res) => {
-        //     db.Player.create({
-        //         player: req.body.player,
-        //         age: req.body.age
-        //     })
-        //         .then(() => {
-        //             res.redirect(307, "/api/player");
-        //         })
-        //         .catch(err => {
-        //             res.status(401).json(err);
-        //         });
     });
 
     // Route for logging user out
@@ -67,26 +55,34 @@ module.exports = function (app) {
         }
     });
 
+    // GET route for getting all of the players
+    app.get("/api/players/", function (req, res) {
+        db.Player.findAll({})
+            .then(function (dbPlayer) {
+                res.json(dbPlayer);
+            });
+    });
+
     //post info to db
-    app.post("/api/players", function (req, res) {
+    app.post("/api/players", (req, res) => {
         console.log(req.body);
         db.Player.create({
             playerName: req.body.playerName,
             playerAge: req.body.playerAge
         })
-            .then(function (dbPlayer) {
+            .then(() => {
                 res.json(dbPlayer);
             });
     });
-    app.post("/api/league", function (req, res) {
-        console.log(req.body);
-        db.player.create({
-            leagueName: req.body.leaguename,
-            leagueType: req.body.leagueType,
-            leagueOwner: DataTypes.String
-        })
-            .then(function (dbLeague) {
-                res.json(dbLeague);
-            });
-    });
+    // app.post("/api/league", function (req, res) {
+    //     console.log(req.body);
+    //     db.player.create({
+    //         leagueName: req.body.leaguename,
+    //         leagueType: req.body.leagueType,
+    //         leagueOwner: DataTypes.String
+    //     })
+    //         .then(function (dbLeague) {
+    //             res.json(dbLeague);
+    //         });
+    // });
 };

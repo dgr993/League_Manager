@@ -32,15 +32,18 @@
     margin-left: 50px;
   }
 
-  /* .waves-effect{
+  #home-btn {
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    border: solid 2px black;
+    background-color: black;
+    color: white;
   }
-  */
+
   #main {
     transition: margin-left .5s;
     padding: 20px;
@@ -81,6 +84,3 @@
     margin-left: 200px;
     margin-right: 200px;
   }
-
-
-
