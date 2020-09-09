@@ -72,7 +72,7 @@ module.exports = function (app) {
         })
     });
 
-    app.get("/api/leagues/", function (req, res) {
+    app.get("/api/leagues", function (req, res) {
         db.League.findAll({})
             .then(function (dbleague) {
                 res.json(dbleague);
