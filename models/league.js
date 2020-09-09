@@ -1,9 +1,18 @@
 // Creates a "Chirp" model that matches up with DB
 module.exports = function (sequelize, DataTypes) {
   var League = sequelize.define("League", {
-    leagueName: DataTypes.STRING,
-    leagueType: DataTypes.STRING,
-    leagueOwner: DataTypes.STRING
+    leagueName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    leagueType: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    leagueOwner: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   });
 
   League.associate = function (models) {

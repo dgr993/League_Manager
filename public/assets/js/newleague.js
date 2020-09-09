@@ -14,7 +14,7 @@ $(document).ready(() => {
             leagueOwner: ownerInput.val().trim()
         };
         console.log(userData);
-        if (!userData.leagueName || !userData.leagueType || !userDate.leagueOwner) {
+        if (!userData.leagueName || !userData.leagueType || !userData.leagueOwner) {
             return;
         }
         // If we have an email and password, run the signUpUser function
