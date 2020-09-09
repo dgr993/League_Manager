@@ -7,6 +7,7 @@ var Handlebars = require("handlebars");
 var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
 
+
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
@@ -39,3 +40,4 @@ db.sequelize.sync().then(() => {
         console.log("App listening on PORT " + PORT);
     });
 });
+
