@@ -50,7 +50,7 @@ module.exports = function (app) {
     // app.get('/matchinput', isAuthenticated, function (req, res, next) {
     //     res.render('matchinput', { layout: 'everypage' });
     // });
-    app.get('/teams', isAuthenticated, function (req, res, next) {
-        res.render('teams', { layout: 'everypage' });
-    });
+    // app.get('/teams', isAuthenticated, function (req, res, next) {
+    //     res.render('teams', { layout: 'everypage' });
+    // });
 };

@@ -96,9 +96,8 @@ module.exports = function (app) {
     app.post("/api/teams", function (req, res) {
         console.log(req.body);
         db.Team.create({
-            leagueName: req.body.leagueName,
-            leagueType: req.body.leagueType,
-            leagueOwner: req.body.leagueOwner
+            teamName: req.body.teamName,
+            coachName: req.body.coachName
         })
     });
 };
