@@ -85,8 +85,20 @@ module.exports = function (app) {
             leagueType: req.body.leagueType,
             leagueOwner: req.body.leagueOwner
         })
-        // .then(function (dbLeague) {
-        //     res.json(dbLeague);
-        // });
+    });
+
+    app.get("/api/teams", function (req, res) {
+        db.Team.findAll({})
+            .then(function (dbteam) {
+                res.json(dbteam);
+            });
+    });
+    app.post("/api/teams", function (req, res) {
+        console.log(req.body);
+        db.Team.create({
+            leagueName: req.body.leagueName,
+            leagueType: req.body.leagueType,
+            leagueOwner: req.body.leagueOwner
+        })
     });
 };
