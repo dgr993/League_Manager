@@ -26,11 +26,11 @@ module.exports = function (app) {
     });
 
     app.get("/createteam", (req, res) => {
-        res.render('create_new_team', { layout: 'everypage' });
+        res.render('newteam', { layout: 'everypage' });
     });
 
     app.get("/createleague", (req, res) => {
-        res.render('create_new_league', { layout: 'everypage' });
+        res.render('newleague', { layout: 'everypage' });
     });
 
 
