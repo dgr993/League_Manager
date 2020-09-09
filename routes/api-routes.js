@@ -57,7 +57,7 @@ module.exports = function (app) {
 
     // GET route for getting all of the players
     app.get("/api/players/", function (req, res) {
-        db.player.findAll({})
+        db.Player.findAll({})
             .then(function (dbplayer) {
                 res.json(dbplayer);
             });
@@ -71,15 +71,22 @@ module.exports = function (app) {
             playerAge: req.body.playerAge
         })
     });
-    app.post("/api/league", function (req, res) {
+
+    app.get("/api/leagues/", function (req, res) {
+        db.League.findAll({})
+            .then(function (dbleague) {
+                res.json(dbleague);
+            });
+    });
+    app.post("/api/leagues", function (req, res) {
         console.log(req.body);
         db.League.create({
             leagueName: req.body.leagueName,
             leagueType: req.body.leagueType,
             leagueOwner: req.body.leagueOwner
         })
-            .then(function (dbLeague) {
-                res.json(dbLeague);
-            });
+        // .then(function (dbLeague) {
+        //     res.json(dbLeague);
+        // });
     });
 };
