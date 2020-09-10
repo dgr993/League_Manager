@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand " href="/"><i>League Manager</i></a>
+            <a class="navbar-brand" href="/"><i>League Manager</i></a>
         </div>
 
 
@@ -18,22 +18,24 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-
-                <a class="nav navbar-center">
-                    {{moment d "dddd || MMMM DD || h:m"}}</a>
-
+                <div class="container-fluid">
+                    <ul class="nav navbar-right">
+                        {{moment d "dddd || MMMM DD || h:m"}}</ul>
+                </div>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false" style="color: rgb(100, 173, 237);">Leagues <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Leagues <span
+                            class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">League 1</a></li>
-                        <li><a href="#">League 2</a></li>
-                        <li><a href="#">League 3</a></li>
+                        {{#each playerName }}
+                            <li>{{playerAge}}</li>
+                        {{/each}}
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false" style="color: rgb(100, 173, 237);">Teams <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Teams <span
+                            class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Team 1</a></li>
                         <li><a href="#">Team 2</a></li>
@@ -41,15 +43,16 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button" aria-haspopup="true"
-                        aria-expanded="false" style="color: rgb(100, 173, 237);">Players <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Players <span
+                            class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Player 1</a></li>
                         <li><a href="#">Player 2</a></li>
                         <li><a href="#">Player 3</a></li>
                     </ul>
                 </li>
-                 <li><a href="/logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
     </div>
