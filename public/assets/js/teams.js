@@ -1,5 +1,8 @@
+$(document).on("click", "btn btn-primary", getTeams);
+
+
 function getTeams() {
-    $.get("/api/todos", function (data) {
+    $.get("/api/teams", function (data) {
         todos = data;
         initializeRows();
     });
