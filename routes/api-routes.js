@@ -100,4 +100,15 @@ module.exports = function (app) {
             coachName: req.body.coachName
         })
     });
+    router.get('/', function(req, res, next) {
+        sql.connect(config).then(() => {
+            return sql.query`select League_Manager_Desc from League_Manager`
+        }).then(result => {
+            console.log(result)
+            // Pass the DB result to the template
+            res.render('newProject', {dropdownVals: result})
+        }).catch(err => {
+            console.log(err)
+        })
+    });
 };
