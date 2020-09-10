@@ -55,8 +55,4 @@ module.exports = function (app) {
     //     res.render('teams', { layout: 'everypage' });
     // });
 
-
-   
-   
-
 };

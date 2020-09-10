@@ -97,8 +97,9 @@ module.exports = function (app) {
         console.log(req.body);
         db.Team.create({
             teamName: req.body.teamName,
-            coachName: req.body.coachName
+
+            teamCoach: req.body.teamCoach
         })
     });
-    
+
 };
