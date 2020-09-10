@@ -97,7 +97,6 @@ module.exports = function (app) {
         console.log(req.body);
         db.Team.create({
             teamName: req.body.teamName,
-<<<<<<< HEAD
             coachName: req.body.coachName
         })
     });
@@ -110,9 +109,6 @@ module.exports = function (app) {
             res.render('newProject', { dropdownVals: result })
         }).catch(err => {
             console.log(err)
-=======
-            teamCoach: req.body.teamCoach
->>>>>>> master
         })
     });
 };

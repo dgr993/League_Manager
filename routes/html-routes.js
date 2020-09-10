@@ -59,20 +59,6 @@ module.exports = function (app) {
     // });
 
 
-<<<<<<< HEAD
-    //app.get("/", (req, res) {
-    //    res.render('teams',)
-    //})
-    //app.get("/", function (req, res) {
-    //    connection.query("SELECT * FROM team;", function (err, data) {
-    //        if (err) {
-    //            return res.status(500).end();
-    //        }
-    //
-    //        res.render("team", { team: teamname });
-    //    });
-    //});
-=======
     //     app.get("/", (req, res) {
     //         res.render('teams', )
     //     })
@@ -85,6 +71,5 @@ module.exports = function (app) {
     //     res.render("team", { team: teamname });
     //   });
     // });
->>>>>>> master
 
 };
