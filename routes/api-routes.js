@@ -87,6 +87,7 @@ module.exports = function (app) {
         })
     });
 
+
     app.get("/api/teams", function (req, res) {
         db.Team.findAll({})
             .then(function (dbteam) {

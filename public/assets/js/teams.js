@@ -10,6 +10,7 @@ function getTeams() {
     });
 }
 
+
 function initializeRows() {
     $teamsContainer.empty();
     var rowsToAdd = [];
