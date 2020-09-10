@@ -94,6 +94,35 @@ module.exports = function (app) {
                 res.json(dbteam);
             });
     });
+// code for running individual team
+     app.get("/api/teams/:id", function (req, res) {
+        db.Team.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbteam) {
+                res.json(dbteam);
+            });
+    });
+
+    //    .get(function(req, res){
+    //     console.log('This is the url path ' + req.originalUrl);
+
+    //     console.log(req.params.annotationId);
+
+    //     models.Annotation.find({
+    //             where: {
+    //                 userId: req.user.user_id,
+    //                 annotationId: req.params.annotationId
+    //             },attributes: ['annotationId', 'annotationDate']
+    //         }).then(function(annotation){
+    //             res.render('pages/annotation-edit.hbs',{
+    //                 annotation: annotation,
+    //                 user: req.user,
+    //                 editMode: req.originalUrl
+    //             });
+    //     })          
+    // })
     app.post("/api/teams", function (req, res) {
         console.log(req.body);
         db.Team.create({
@@ -102,5 +131,7 @@ module.exports = function (app) {
 
         })
     });
+
+    
 
 };

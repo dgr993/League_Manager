@@ -4,11 +4,9 @@ function getTeams() {
         //        initializeRows();
         data.map(team => {
             $("#teamDrop").append(
-                [
-                    "<li>",
-                    team.teamName,
-                    "</li>"
-                ]
+                
+                    `<li><a href=api/teams/${team.id}>${team.teamName}</a></li>`
+                
             )
 
         })
@@ -21,11 +19,9 @@ function getPlayers() {
         //        initializeRows();
         data.map(player => {
             $("#playersDrop").append(
-                [
-                    "<li>",
-                    player.playerName,
-                    "</li>"
-                ]
+                
+                    `<li><a href=api/teams/${team.id}>${player.playerName}</a></li>`
+                
             )
 
         })
@@ -39,11 +35,9 @@ function getLeagues() {
         //        initializeRows();
         data.map(league => {
             $("#leaguesDrop").append(
-                [
-                    "<li>",
-                    league.leagueName,
-                    "</li>"
-                ]
+                
+                    `<li><a href=api/teams/${team.id}>${league.leagueName}</a></li>`
+                
             )
 
         })
