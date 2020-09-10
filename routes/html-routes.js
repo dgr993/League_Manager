@@ -36,6 +36,9 @@ module.exports = function (app) {
         res.render('teams', { layout: 'everypage' });
     });
 
+    app.get("/teams", (req, res) => {
+        res.render('teams', { layout: 'everypage' });
+    });
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
@@ -56,20 +59,6 @@ module.exports = function (app) {
 
     // app.get('/teams', isAuthenticated, function (req, res, next) {
     //     res.render('teams', { layout: 'everypage' });
-    // });
-
-
-    //     app.get("/", (req, res) {
-    //         res.render('teams', )
-    //     })
-    //     app.get("/", function(req, res) {
-    //   connection.query("SELECT * FROM team;", function(err, data) {
-    //     if (err) {
-    //       return res.status(500).end();
-    //     }
-
-    //     res.render("team", { team: teamname });
-    //   });
     // });
 
 };

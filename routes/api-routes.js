@@ -98,6 +98,8 @@ module.exports = function (app) {
         db.Team.create({
             teamName: req.body.teamName,
             teamCoach: req.body.teamCoach
+
         })
     });
+
 };
