@@ -53,4 +53,17 @@ module.exports = function (app) {
     app.get('/teams', isAuthenticated, function (req, res, next) {
         res.render('teams', { layout: 'everypage' });
     });
+
+    app.get("/", (req, res) {
+        res.render('teams', )
+    })
+    app.get("/", function(req, res) {
+  connection.query("SELECT * FROM team;", function(err, data) {
+    if (err) {
+      return res.status(500).end();
+    }
+
+    res.render("team", { team: teamname });
+  });
+});
 };
