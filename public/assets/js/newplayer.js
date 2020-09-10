@@ -32,17 +32,8 @@ $(document).ready(() => {
                 window.location.replace("/players");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
-<<<<<<< HEAD:public/assets/js/create_new_player.js
-            .catch(handleLoginErr);
-    }
-    
-    function handleLoginErr(err) {
-        $("#alert .msg").text(err.responseJSON);
-        $("#alert").fadeIn(500);
-=======
             .catch(err => {
                 console.log(err);
             });
->>>>>>> 70f3e86680965e237cd6d24f16aa912b8a8e7cf7:public/assets/js/newplayer.js
     }
 });

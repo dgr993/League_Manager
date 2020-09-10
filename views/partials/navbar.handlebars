@@ -26,9 +26,9 @@
                     <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false" style="color: rgb(100, 173, 237);">Leagues <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">League 1</a></li>
-                        <li><a href="#">League 2</a></li>
-                        <li><a href="#">League 3</a></li>
+                        {{#each playerName }}
+                            <li>{{playerAge}}</li>
+                        {{/each}}
                     </ul>
                 </li>
                 <li class="dropdown">
