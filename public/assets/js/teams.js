@@ -1,12 +1,15 @@
 $(document).on("click", "btn btn-primary", getTeams);
 
 
+
 function getTeams() {
+    console.log("working")
     $.get("/api/teams", function (data) {
         teams = data;
         initializeRows();
     });
 }
+
 
 function initializeRows() {
     $teamsContainer.empty();
@@ -23,7 +26,7 @@ function initializeRows() {
 function createNewRow(todo) {
     var $newInputRow = $(
         [
-            "<div class= 'card'> HELLO",
+            "<div class= 'card'> hi ",
             teams.text,
             "</div>"
         ].join("")
