@@ -3,16 +3,29 @@ $(document).on("click", "btn btn-primary", getTeams);
 
 function getTeams() {
     $.get("/api/teams", function (data) {
-        todos = data;
+        teams = data;
         initializeRows();
     });
 }
 
 function initializeRows() {
-    $teamContainer.empty();
+    $teamsContainer.empty();
     var rowsToAdd = [];
-    for (var i = 0; i < todos.length; i++) {
+    for (var i = 0; i < teams.length; i++) {
         rowsToAdd.push(createNewRow(todos[i]));
     }
-    $todoContainer.prepend(rowsToAdd);
+    $teamsContainer.prepend(rowsToAdd);
+
+
+
+}
+
+function createNewRow(todo) {
+    var $newInputRow = $(
+        [
+            "<div class= 'card'> HELLO",
+            teams.text,
+            "</div>"
+        ].join("")
+    )
 }
