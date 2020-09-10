@@ -1,24 +1,26 @@
 <div class="container">
   <div class="containerplayer">
-
     <h1 class="col-md-12 text-center">Create New Team</h1>
-    <div>
+
+    <form class="team">
       <div class="mb-3">
         <label for="validationTextarea">Team Name</label>
-        <textarea class="form-control is-invalid" id="validationTextarea" placeholder="" required></textarea>
+        <textarea class="form-control is-invalid" id="team-input" placeholder="" required></textarea>
         <div class="invalid-feedback">
-        <br>
+          <br>
         </div>
       </div>
-    </div>
-    <div class="mb-3">
-      <label for="validationTextarea">Team Coach</label>
-      <textarea class="form-control is-invalid" id="validationTextarea" placeholder="" required></textarea>
-      <div class="invalid-feedback">
+      <div class="mb-3">
+        <label for="validationTextarea">Team Coach</label>
+        <textarea class="form-control is-invalid" id="coach-input" placeholder="" required></textarea>
+        <div class="invalid-feedback">
 
-      </div>
-      <br>
-      <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
-    </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+    </form>
   </div>
 </div>
+</div>
+
+<script type="text/javascript" src="/assets/js/newteam.js"></script>

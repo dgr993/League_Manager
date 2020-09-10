@@ -96,9 +96,19 @@ module.exports = function (app) {
     app.post("/api/teams", function (req, res) {
         console.log(req.body);
         db.Team.create({
-            leagueName: req.body.leagueName,
-            leagueType: req.body.leagueType,
-            leagueOwner: req.body.leagueOwner
+            teamName: req.body.teamName,
+            coachName: req.body.coachName
+        })
+    });
+    router.get('/', function(req, res, next) {
+        sql.connect(config).then(() => {
+            return sql.query`select League_Manager_Desc from League_Manager`
+        }).then(result => {
+            console.log(result)
+            // Pass the DB result to the template
+            res.render('newProject', {dropdownVals: result})
+        }).catch(err => {
+            console.log(err)
         })
     });
 };
