@@ -26,30 +26,23 @@
                     <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Leagues <span
                             class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        {{#each playerName }}
-                            <li>{{playerAge}}</li>
-                        {{/each}}
+                    <ul id="leaguesDrop" class="dropdown-menu">
+
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Teams <span
                             class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Team 1</a></li>
-                        <li><a href="#">Team 2</a></li>
-                        <li><a href="#">Team 3</a></li>
+                    <ul id="teamDrop" class="dropdown-menu">
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Players <span
                             class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Player 1</a></li>
-                        <li><a href="#">Player 2</a></li>
-                        <li><a href="#">Player 3</a></li>
+                    <ul id="playersDrop" class="dropdown-menu">
+
                     </ul>
                 </li>
                 <li><a href="/logout">Logout</a></li>
@@ -57,7 +50,4 @@
         </div>
     </div>
 </nav>
-
-<script type="text/javascript" src="/assets/js/navteam.js"></script>
-
-<script type="text/javascript" src="/assets/js/newplayer.js"></script>
+<script type="text/javascript" src="assets/js/navbar.js"></script>
