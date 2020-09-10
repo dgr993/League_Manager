@@ -1,3 +1,6 @@
+
+
+
 function getTeams() {
     $.get("/api/teams", function (data) {
         //        teams = data;
@@ -7,6 +10,7 @@ function getTeams() {
                 [
                     "<li>",
                     team.teamName,
+                    "<button type='button' class='btn btn - danger'>Danger</button>",
                     "</li>"
                 ]
             )
