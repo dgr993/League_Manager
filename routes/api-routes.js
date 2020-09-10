@@ -30,18 +30,6 @@ module.exports = function (app) {
             .catch(err => {
                 res.status(401).json(err);
             });
-
-        // app.post("/api/player", (req, res) => {
-        //     db.Player.create({
-        //         player: req.body.player,
-        //         age: req.body.age
-        //     })
-        //         .then(() => {
-        //             res.redirect(307, "/api/player");
-        //         })
-        //         .catch(err => {
-        //             res.status(401).json(err);
-        //         });
     });
 
     // Route for logging user out
@@ -67,26 +55,50 @@ module.exports = function (app) {
         }
     });
 
+    // GET route for getting all of the players
+    app.get("/api/players/", function (req, res) {
+        db.Player.findAll({})
+            .then(function (dbplayer) {
+                res.json(dbplayer);
+            });
+    });
+
     //post info to db
-    app.post("/api/players", function (req, res) {
+    app.post("/api/players", (req, res) => {
         console.log(req.body);
         db.Player.create({
             playerName: req.body.playerName,
             playerAge: req.body.playerAge
         })
-            .then(function (dbPlayer) {
-                res.json(dbPlayer);
+    });
+
+    app.get("/api/leagues", function (req, res) {
+        db.League.findAll({})
+            .then(function (dbleague) {
+                res.json(dbleague);
             });
     });
-    app.post("/api/league", function (req, res) {
+    app.post("/api/leagues", function (req, res) {
         console.log(req.body);
-        db.player.create({
-            leagueName: req.body.leaguename,
+        db.League.create({
+            leagueName: req.body.leagueName,
             leagueType: req.body.leagueType,
-            leagueOwner: DataTypes.String
+            leagueOwner: req.body.leagueOwner
         })
-            .then(function (dbLeague) {
-                res.json(dbLeague);
+    });
+
+    app.get("/api/teams", function (req, res) {
+        db.Team.findAll({})
+            .then(function (dbteam) {
+                res.json(dbteam);
             });
+    });
+    app.post("/api/teams", function (req, res) {
+        console.log(req.body);
+        db.Team.create({
+            leagueName: req.body.leagueName,
+            leagueType: req.body.leagueType,
+            leagueOwner: req.body.leagueOwner
+        })
     });
 };

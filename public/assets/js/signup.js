@@ -11,7 +11,7 @@ $(document).ready(() => {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim()
         };
-
+        console.log(userData);
         if (!userData.email || !userData.password) {
             return;
         }
@@ -29,12 +29,12 @@ $(document).ready(() => {
             password: password
         })
             .then(() => {
-                window.location.replace("/homepage");
+                window.location.replace("/login");
                 // If there's an error, handle it by throwing up a bootstrap alert
             })
             .catch(handleLoginErr);
     }
-
+    
     function handleLoginErr(err) {
         $("#alert .msg").text(err.responseJSON);
         $("#alert").fadeIn(500);

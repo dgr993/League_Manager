@@ -17,23 +17,20 @@ module.exports = function (app) {
 
     app.get("/login", (req, res) => {
         // If the user already has an account send them to the members page
-       
+
         res.render("login");
     });
 
     app.get("/createplayer", (req, res) => {
-        // If the user already has an account send them to the members page
-        res.render('create_new_players', { layout: 'everypage' });
+        res.render('newplayer', { layout: 'everypage' });
     });
 
     app.get("/createteam", (req, res) => {
-        // If the user already has an account send them to the members page
-        res.render('create_new_team', { layout: 'everypage' });
+        res.render('newteam', { layout: 'everypage' });
     });
 
     app.get("/createleague", (req, res) => {
-        // If the user already has an account send them to the members page
-        res.render('create_new_league', { layout: 'everypage' });
+        res.render('newleague', { layout: 'everypage' });
     });
 
 
