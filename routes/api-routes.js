@@ -98,18 +98,9 @@ module.exports = function (app) {
         console.log(req.body);
         db.Team.create({
             teamName: req.body.teamName,
-            coachName: req.body.coachName
+            teamCoach: req.body.teamCoach
+
         })
     });
-    app.get('/', function (req, res, next) {
-        sql.connect(config).then(() => {
-            return sql.query`select League_Manager_Desc from League_Manager`
-        }).then(result => {
-            console.log(result)
-            // Pass the DB result to the template
-            res.render('newProject', { dropdownVals: result })
-        }).catch(err => {
-            console.log(err)
-        })
-    });
+
 };
