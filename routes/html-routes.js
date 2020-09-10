@@ -32,6 +32,9 @@ module.exports = function (app) {
     app.get("/createleague", (req, res) => {
         res.render('newleague', { layout: 'everypage' });
     });
+    app.get("/teams", (req, res) => {
+        res.render('teams', { layout: 'everypage' });
+    });
 
     app.get("/teams", (req, res) => {
         res.render('teams', { layout: 'everypage' });
