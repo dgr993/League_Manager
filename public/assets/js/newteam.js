@@ -9,7 +9,6 @@ $(document).ready(() => {
         event.preventDefault();
         const userData = {
             teamName: teamInput.val().trim(),
-<<<<<<< HEAD
             coach: coachInput.val().trim(),
         };
         console.log(userData);
@@ -18,33 +17,16 @@ $(document).ready(() => {
         }
         // If we have an email and password, run the signUpUser function
         createNewTeam(userData.teamName, userData.teamCoach);
-=======
-            coachName: coachInput.val().trim()
-        };
-        console.log(userData);
-        if (!userData.teamName || !userData.coachName) {
-            return;
-        }
-        // If we have an email and password, run the signUpUser function
-        createNewPlayer(userData.teamName, userData.coachName);
->>>>>>> master
         teamInput.val("");
         coachInput.val("");
     });
 
     // Does a post to the signup route. If successful, we are redirected to the members page
     // Otherwise we log any errors
-<<<<<<< HEAD
     function createNewTeam(teamName, teamCoach) {
         $.post("/api/teams", {
             teamName: teamName,
             teamCoach: teamCoach
-=======
-    function createNewPlayer(teamName, coachName) {
-        $.post("/api/teams", {
-            teamName: teamName,
-            coachName: coachName
->>>>>>> master
         })
             .then(() => {
                 window.location.replace("/teams");
