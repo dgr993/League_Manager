@@ -1,6 +1,3 @@
-
-
-
 function getTeams() {
     $.get("/api/teams", function (data) {
         //        teams = data;
