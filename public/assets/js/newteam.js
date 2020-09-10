@@ -9,7 +9,7 @@ $(document).ready(() => {
         event.preventDefault();
         const userData = {
             teamName: teamInput.val().trim(),
-            coach: coachInput.val().trim(),
+            teamCoach: coachInput.val().trim(),
         };
         console.log(userData);
         if (!userData.teamName || !userData.teamCoach) {
