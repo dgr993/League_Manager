@@ -56,17 +56,7 @@ module.exports = function (app) {
     // });
 
 
-    app.get("/", (req, res) {
-        res.render('teams', )
-    })
-    app.get("/", function(req, res) {
-  connection.query("SELECT * FROM team;", function(err, data) {
-    if (err) {
-      return res.status(500).end();
-    }
-
-    res.render("team", { team: teamname });
-  });
-});
+   
+   
 
 };
