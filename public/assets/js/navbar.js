@@ -2,13 +2,10 @@ function getTeams() {
     $.get("/api/teams", function (data) {
         data.map(team => {
             $("#teamDrop").append(
+
                     `<li><a href=/teams/${team.id}>${team.teamName}</a></li>`
 
-                    //"<button type='button' class='btn btn - danger'>Danger</button>",
-                    
-
-                
-
+                    //"<button type='button' class='btn btn - danger'>Danger</button>",    
 
             )
 
@@ -33,6 +30,7 @@ function getLeagues() {
         data.map(league => {
             $("#leaguesDrop").append(   
                     `<li><a href=/leagues/${league.id}>${league.leagueName}</a></li>`
+
             )
 
         })
