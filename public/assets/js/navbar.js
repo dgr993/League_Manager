@@ -17,7 +17,7 @@ function getPlayers() {
     $.get("/api/players", function (data) {
         data.map(player => {
             $("#playersDrop").append(
-                    `<li><a href=teams/${player.id}>${player.playerName}</a></li>`
+                    `<li><a href=/players/${player.id}>${player.playerName}</a></li>`
             )
 
         })
