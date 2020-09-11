@@ -1,12 +1,24 @@
+
+
+
 function getTeams() {
     $.get("/api/teams", function (data) {
         //        teams = data;
         //        initializeRows();
         data.map(team => {
             $("#teamDrop").append(
+
                 
+<<<<<<< HEAD
                     `<li><a href=/teams/${team.id}>${team.teamName}</a></li>`
+=======
+                    `<li><a href=teams/${team.id}>${team.teamName}</a></li>`
+               
+                    //"<button type='button' class='btn btn - danger'>Danger</button>",
+                    
+>>>>>>> fe34f5fec44dd2735f420ba75913e05e37edf043
                 
+
             )
 
         })
