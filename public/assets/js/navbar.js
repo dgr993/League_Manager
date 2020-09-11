@@ -2,31 +2,16 @@ function getTeams() {
     $.get("/api/teams", function (data) {
         data.map(team => {
             $("#teamDrop").append(
-<<<<<<< HEAD
-                
-                    `<li><a href=teams/${team.id}>${team.teamName}</a></li>`
-               
-                    //"<button type='button' class='btn btn - danger'>Danger</button>",
-=======
 
-                    `<li><a href=teams/${team.id}>${team.teamName}</a></li>`
-               
-                    //"<button type='button' class='btn btn - danger'>Danger</button>",
-                    
+                    `<li><a href=/teams/${team.id}>${team.teamName}</a></li>`
 
->>>>>>> master
+                    //"<button type='button' class='btn btn - danger'>Danger</button>",    
+
             )
 
         })
     });
 }
-
-
-
-
-
-
-
 
 function getPlayers() {
     $.get("/api/players", function (data) {
@@ -43,8 +28,9 @@ function getLeagues() {
     $.get("/api/leagues", function (data) {
         console.log(data)
         data.map(league => {
-            $("#leaguesDrop").append(
-                    `<li><a href=teams/${league.id}>${league.leagueName}</a></li>`
+            $("#leaguesDrop").append(   
+                    `<li><a href=/leagues/${league.id}>${league.leagueName}</a></li>`
+
             )
 
         })
