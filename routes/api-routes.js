@@ -67,10 +67,10 @@ module.exports = function (app) {
     });
 
     // GET route for getting all of the players
-    app.get("/api/players/", function (req, res) {
+    app.get("/api/players", function (req, res) {
         db.Player.findAll({})
-            .then(function (dbplayer) {
-                res.json(dbplayer);
+            .then(function (dbPlayer) {
+                res.json(dbPlayer);
             });
     });
 
@@ -85,8 +85,8 @@ module.exports = function (app) {
 
     app.get("/api/leagues", function (req, res) {
         db.League.findAll({})
-            .then(function (dbleague) {
-                res.json(dbleague);
+            .then(function (dbLeague) {
+                res.json(dbLeague);
             });
     });
     app.post("/api/leagues", function (req, res) {
@@ -101,8 +101,8 @@ module.exports = function (app) {
 
     app.get("/api/teams", function (req, res) {
         db.Team.findAll({})
-            .then(function (dbteam) {
-                res.json(dbteam);
+            .then(function (dbTeam) {
+                res.json(dbTeam);
             });
     });
 // code for running individual team
