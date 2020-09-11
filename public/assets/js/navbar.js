@@ -1,27 +1,11 @@
-
-
-
 function getTeams() {
     $.get("/api/teams", function (data) {
         data.map(team => {
             $("#teamDrop").append(
-<<<<<<< HEAD
-                [
-                    "<li>",
-                    team.teamName,
-                    "<button type='button' class='btn btn - danger'> X </button>",
-                    "</li>"
-                ]
-=======
                 
                     `<li><a href=teams/${team.id}>${team.teamName}</a></li>`
                
                     //"<button type='button' class='btn btn - danger'>Danger</button>",
-                    
-                
-
-
->>>>>>> master
             )
 
         })
@@ -41,8 +25,6 @@ function getPlayers() {
             $("#playersDrop").append(
 
                     `<li><a href=teams/${player.id}>${player.playerName}</a></li>`
-                
-
             )
 
         })
