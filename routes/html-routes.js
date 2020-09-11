@@ -35,8 +35,8 @@ module.exports = function (app) {
     app.get("/teams", (req, res) => {
         res.render('teams', { layout: 'everypage' });
     });
-
-    app.get("/teams", (req, res) => {
+// each item for team getting its own page
+    app.get("/teams/:id", (req, res) => {
         res.render('teams', { layout: 'everypage' });
     });
 
