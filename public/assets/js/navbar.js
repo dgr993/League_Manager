@@ -1,0 +1,42 @@
+function getTeams() {
+    $.get("/api/teams", function (data) {
+        data.map(team => {
+            $("#teamDrop").append(
+
+
+                    `<li><a href=/teams/${team.id}>${team.teamName}</a></li>`
+                    //"<button type='button' class='btn btn - danger'>Danger</button>",
+
+            )
+
+        })
+    });
+}
+
+function getPlayers() {
+    $.get("/api/players", function (data) {
+        data.map(player => {
+            $("#playersDrop").append(
+                    `<li><a href=/players/${player.id}>${player.playerName}</a></li>`
+            )
+
+        })
+    });
+}
+
+function getLeagues() {
+    $.get("/api/leagues", function (data) {
+        console.log(data)
+        data.map(league => {
+            $("#leaguesDrop").append(   
+                    `<li><a href=/leagues/${league.id}>${league.leagueName}</a></li>`
+
+            )
+
+        })
+    });
+}
+
+getPlayers()
+getTeams()
+getLeagues()
