@@ -3,9 +3,9 @@ function getTeams() {
         data.map(team => {
             $("#teamDrop").append(
 
-                    `<li><a href=/teams/${team.id}>${team.teamName}</a></li>`
 
-                    //"<button type='button' class='btn btn - danger'>Danger</button>",    
+                    `<li><a href=teams/${team.id}>${team.teamName}</a></li>`
+                    //"<button type='button' class='btn btn - danger'>Danger</button>",
 
             )
 
