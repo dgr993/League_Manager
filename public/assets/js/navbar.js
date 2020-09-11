@@ -3,33 +3,46 @@
 
 function getTeams() {
     $.get("/api/teams", function (data) {
-        //        teams = data;
-        //        initializeRows();
         data.map(team => {
             $("#teamDrop").append(
+<<<<<<< HEAD
                 [
                     "<li>",
                     team.teamName,
                     "<button type='button' class='btn btn - danger'> X </button>",
                     "</li>"
                 ]
+=======
+                
+                    `<li><a href=teams/${team.id}>${team.teamName}</a></li>`
+               
+                    //"<button type='button' class='btn btn - danger'>Danger</button>",
+                    
+                
+
+
+>>>>>>> master
             )
 
         })
     });
 }
 
+
+
+
+
+
+
+
 function getPlayers() {
     $.get("/api/players", function (data) {
-        //        teams = data;
-        //        initializeRows();
         data.map(player => {
             $("#playersDrop").append(
-                [
-                    "<li>",
-                    player.playerName,
-                    "</li>"
-                ]
+
+                    `<li><a href=teams/${player.id}>${player.playerName}</a></li>`
+                
+
             )
 
         })
@@ -39,43 +52,19 @@ function getPlayers() {
 function getLeagues() {
     $.get("/api/leagues", function (data) {
         console.log(data)
-        //        teams = data;
-        //        initializeRows();
         data.map(league => {
             $("#leaguesDrop").append(
-                [
-                    "<li>",
-                    league.leagueName,
-                    "</li>"
-                ]
+
+ 
+                    `<li><a href=teams/${league.id}>${league.leagueName}</a></li>`
+                
+
             )
 
         })
     });
 }
-//
-//function initializeRows() {
-//    $teamsContainer.empty();
-//    var rowsToAdd = [];
-//    for (var i = 0; i < teams.length; i++) {
-//        rowsToAdd.push(createNewRow(todos[i]));
-//    }
-//    $teamsContainer.prepend(rowsToAdd);
-//
-//
-//
-//}
-//
-//function createNewRow(todo) {
-//    var $newInputRow = $(
-//        [
-//            "<div class= 'card'> hi ",
-//            teams.text,
-//            "</div>"
-//        ].join("")
-//    )
-//}
-//
+
 getPlayers()
 getTeams()
 getLeagues()
