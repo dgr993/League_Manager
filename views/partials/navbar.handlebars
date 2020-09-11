@@ -13,43 +13,29 @@
             <a class="navbar-brand" href="/"><i>League Manager</i></a>
         </div>
 
-
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <div class="container-fluid">
-                    <ul class="nav navbar-right">
-                        {{moment d "dddd || MMMM DD || h:m"}}</ul>
-                </div>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Leagues <span
                             class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        {{#each playerName }}
-                            <li>{{playerAge}}</li>
-                        {{/each}}
+                    <ul id="leaguesDrop" class="dropdown-menu" style="padding-left: 10%; background-color:rgb(100, 173, 237); color:black">
+
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Teams <span
                             class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Team 1</a></li>
-                        <li><a href="#">Team 2</a></li>
-                        <li><a href="#">Team 3</a></li>
+                    <ul id="teamDrop" class="dropdown-menu" style="padding-left: 10%; background-color:rgb(100, 173, 237); color:white">
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle navdrop" data-toggle="dropdown" role="button"
                         aria-haspopup="true" aria-expanded="false" style="color: rgb(100, 173, 237);">Players <span
                             class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Player 1</a></li>
-                        <li><a href="#">Player 2</a></li>
-                        <li><a href="#">Player 3</a></li>
+                    <ul id="playersDrop" class="dropdown-menu" style="padding-left: 10%; background-color:rgb(100, 173, 237); color:white">
                     </ul>
                 </li>
                 <li><a href="/logout">Logout</a></li>
@@ -57,3 +43,5 @@
         </div>
     </div>
 </nav>
+
+<script type="text/javascript" src="assets/js/navbar.js"></script>

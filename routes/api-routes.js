@@ -38,6 +38,17 @@ module.exports = function (app) {
         res.redirect("/");
     });
 
+    app.delete("/api/teams/:id", function (req, res) {
+        let condition = "id = " + req.params.id
+        teams.delete(condition, function (result) {
+            if (result.affectedRows == 0) {
+                // If no rows were changed, then the ID must not exist, so 404
+                return res.status(404).end()
+            } else {
+                res.status(200).end()
+            }
+        })
+    })
 
 
     // Route for getting some data about our user to be used client side
@@ -87,17 +98,51 @@ module.exports = function (app) {
         })
     });
 
+
     app.get("/api/teams", function (req, res) {
         db.Team.findAll({})
             .then(function (dbTeam) {
                 res.json(dbTeam);
             });
     });
+// code for running individual team
+     app.get("/api/teams/:id", function (req, res) {
+        db.Team.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbteam) {
+                res.json(dbteam);
+            });
+    });
+
+    //    .get(function(req, res){
+    //     console.log('This is the url path ' + req.originalUrl);
+
+    //     console.log(req.params.annotationId);
+
+    //     models.Annotation.find({
+    //             where: {
+    //                 userId: req.user.user_id,
+    //                 annotationId: req.params.annotationId
+    //             },attributes: ['annotationId', 'annotationDate']
+    //         }).then(function(annotation){
+    //             res.render('pages/annotation-edit.hbs',{
+    //                 annotation: annotation,
+    //                 user: req.user,
+    //                 editMode: req.originalUrl
+    //             });
+    //     })          
+    // })
     app.post("/api/teams", function (req, res) {
         console.log(req.body);
         db.Team.create({
             teamName: req.body.teamName,
             teamCoach: req.body.teamCoach
+
         })
     });
+
+    
+
 };

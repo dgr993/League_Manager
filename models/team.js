@@ -20,33 +20,5 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  // Team.associate = function (models) {
-  //   // Associating Author with Posts
-  //   // When an Author is deleted, also delete any associated Posts
-  //   Team.hasMany(models.GameHistory, {
-  //     onDelete: "cascade"
-  //   });
-  // };
-
-  // Team.associate = function (models) {
-  //   // We're saying that a Team should belong to an GameHistory
-  //   // A Post can't be created without an GameHistory due to the foreign key constraint
-  //   Team.belongsTo(models.Coach, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
-
-  // Team.associate = function (models) {
-  //   // We're saying that a Team should belong to an GameHistory
-  //   // A Post can't be created without an GameHistory due to the foreign key constraint
-  //   Team.belongsTo(models.League, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
-
   return Team;
 };
