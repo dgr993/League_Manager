@@ -4,7 +4,7 @@ function getTeams() {
             $("#teamDrop").append(
 
 
-                    `<li><a href=teams/${team.id}>${team.teamName}</a></li>`
+                    `<li><a href=/teams/${team.id}>${team.teamName}</a></li>`
                     //"<button type='button' class='btn btn - danger'>Danger</button>",
 
             )
