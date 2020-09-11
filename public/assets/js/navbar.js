@@ -10,7 +10,7 @@ function getTeams() {
                 [
                     "<li>",
                     team.teamName,
-                    "<button type='button' class='btn btn - danger'>Danger</button>",
+                    "<button type='button' class='btn btn - danger'> X </button>",
                     "</li>"
                 ]
             )
