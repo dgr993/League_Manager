@@ -3,11 +3,8 @@
 
 function getTeams() {
     $.get("/api/teams", function (data) {
-        //        teams = data;
-        //        initializeRows();
         data.map(team => {
             $("#teamDrop").append(
-
                 
 <<<<<<< HEAD
                     `<li><a href=/teams/${team.id}>${team.teamName}</a></li>`
@@ -19,21 +16,33 @@ function getTeams() {
 >>>>>>> fe34f5fec44dd2735f420ba75913e05e37edf043
                 
 
+
             )
 
         })
     });
 }
 
+
+
+
+
+
+
+
 function getPlayers() {
     $.get("/api/players", function (data) {
-        //        teams = data;
-        //        initializeRows();
         data.map(player => {
             $("#playersDrop").append(
+<<<<<<< HEAD
                 
                     `<li><a href=/players/${player.id}>${player.playerName}</a></li>`
+=======
+
+                    `<li><a href=teams/${player.id}>${player.playerName}</a></li>`
+>>>>>>> master
                 
+
             )
 
         })
@@ -43,41 +52,24 @@ function getPlayers() {
 function getLeagues() {
     $.get("/api/leagues", function (data) {
         console.log(data)
-        //        teams = data;
-        //        initializeRows();
         data.map(league => {
             $("#leaguesDrop").append(
+<<<<<<< HEAD
                 
                     `<li><a href=/leagues/${league.id}>${league.leagueName}</a></li>`
+=======
+
+ 
+                    `<li><a href=teams/${league.id}>${league.leagueName}</a></li>`
+>>>>>>> master
                 
+
             )
 
         })
     });
 }
-//
-//function initializeRows() {
-//    $teamsContainer.empty();
-//    var rowsToAdd = [];
-//    for (var i = 0; i < teams.length; i++) {
-//        rowsToAdd.push(createNewRow(todos[i]));
-//    }
-//    $teamsContainer.prepend(rowsToAdd);
-//
-//
-//
-//}
-//
-//function createNewRow(todo) {
-//    var $newInputRow = $(
-//        [
-//            "<div class= 'card'> hi ",
-//            teams.text,
-//            "</div>"
-//        ].join("")
-//    )
-//}
-//
+
 getPlayers()
 getTeams()
 getLeagues()
