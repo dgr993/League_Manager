@@ -38,6 +38,7 @@ module.exports = function (app) {
     });
 // each item for team getting its own page
     app.get("/teams/:id", (req, res) => {
+
         db.Team.findOne({
             where: {
                 id: req.params.id
@@ -77,6 +78,7 @@ module.exports = function (app) {
                 res.render('players',  { data, layout: 'everypage' });
             });
         
+
     });
 
     // Here we've add our isAuthenticated middleware to this route.
