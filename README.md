@@ -38,5 +38,5 @@ Ruiz Sanchez
 Trevor Otterson
 David Grant
 
-![Screenshot](Screenshot.png)
+![Screenshot](screenshot.png)
      
