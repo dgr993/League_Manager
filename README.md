@@ -37,5 +37,11 @@ Talmage Lucas
 Ruiz Sanchez
 Trevor Otterson
 David Grant
+<<<<<<< HEAD
      
 ![](/public/assets/screenshot)
+=======
+
+![Screenshot](Screenshot.png)
+     
+>>>>>>> master
