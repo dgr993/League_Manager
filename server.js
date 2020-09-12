@@ -8,6 +8,11 @@ var MomentHandler = require("handlebars.moment");
 MomentHandler.registerHelpers(Handlebars);
 
 
+
+
+
+
+
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
@@ -29,6 +34,10 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+// to display images in .handlebar files
+app.use(express.static('images'));
+
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
