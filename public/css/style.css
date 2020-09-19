@@ -69,22 +69,6 @@
     z-index: 100;
   }
 
-  .containerplayer {
-    margin-left: 200px;
-    margin-right: 200px;
-  }
-
-  .containerteam {
-    margin-left: 200px;
-    margin-right: 200px;
-  }
-
-
-  .containerleague {
-    margin-left: 200px;
-    margin-right: 200px;
-  }
-
  .dropdown-menu>li>a {
     display: block;
     padding: 3px 20px;
